@@ -10,11 +10,22 @@ class StateFulPage extends StatefulWidget {
 class _StateFulPageState extends State<StateFulPage> {
   List<String> names = ["Mark Zuckerberg", "Jeff Bezos", "Elon Mask"];
   int i = 0;
+  Color color = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink[200],
         title: Text("State full"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState((){
+            color = Colors.pinkAccent;
+          });
+        },
+        child: Icon(Icons.color_lens),
+        backgroundColor: color,
       ),
       body: Center(
         child: Column(
